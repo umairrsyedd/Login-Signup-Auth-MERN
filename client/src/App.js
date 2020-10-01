@@ -1,14 +1,21 @@
-import React from "react";
-import "./App.css";
-
-function App() {
-    return (
-        <div className="App">
-            <header className="App-header">
-                <p>Welcome To The Landing Page</p>
-            </header>
-        </div>
-    );
+import React, { Component } from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Navbar from "./components/Layout/Navbar";
+import Landing from "./components/Layout/Landing";
+import Register from "./components/auth/Register";
+import Login from "./components/auth/Login";
+class App extends Component {
+    render() {
+        return (
+            <Router>
+                <div className="App">
+                    <Navbar />
+                    <Route exact path="/" component={Landing} />
+                    <Route exact path="/register" component={Register} />
+                    <Route exact path="/login" component={Login} />
+                </div>
+            </Router>
+        );
+    }
 }
-
 export default App;
