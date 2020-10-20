@@ -49,6 +49,11 @@ class App extends Component {
                                 path="/dashboard"
                                 component={Dashboard}
                             />
+                            <PrivateRoute
+                                exact
+                                path="/private"
+                                component={Landing}
+                            />
                         </Switch>
                     </div>
                 </Router>
